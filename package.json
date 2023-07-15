@@ -1,5 +1,5 @@
 {
-  "name": "natours",
+  "name": "tourventure",
   "version": "1.0.0",
   "description": "Learning node, express and mongoDB",
   "main": "app.js",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ritiksharmarj/natours.git"
+    "url": "git+https://github.com/Pushyajain/Tourventure-main"
   },
-  "author": "Ritik Sharma",
+  "author": "Pushya Jain",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ritiksharmarj/natours/issues"
+    "url": "https://github.com/Pushyajain/Tourventure-main/issues"
   },
-  "homepage": "https://github.com/ritiksharmarj/natours#readme",
+  "homepage": "https://github.com/Pushyajain/Tourventure-main",
   "dependencies": {
     "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
