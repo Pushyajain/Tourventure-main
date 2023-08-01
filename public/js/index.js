@@ -85,7 +85,9 @@ if (userPasswordForm) {
 if (tourBookingBtn) {
   tourBookingBtn.addEventListener('click', (e) => {
     e.target.textContent = 'Processing...';
+    console.log(e.target.dataset);
     const { tourId } = e.target.dataset;
+    console.log(tourId);
     bookTour(tourId);
   });
 }
