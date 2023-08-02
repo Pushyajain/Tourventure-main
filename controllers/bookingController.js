@@ -4,7 +4,7 @@ const User = require('../models/userModel');
 const Booking = require('../models/bookingModel');
 const catchAsync = require('../utils/catchAsync');
 const factory = require('./handlerFactory');
-
+const express = require('express');
 // Stripe checkout - https://stripe.com/docs/payments/checkout
 // Stripe JS reference - https://stripe.com/docs/js
 // Stripe API reference - https://stripe.com/docs/api
@@ -15,7 +15,7 @@ const factory = require('./handlerFactory');
  */
 exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   // 1) Get the currently booked tour
-  const tour = await Tour.findById(req.params.id);
+  const tour = await Tour.findById(req.params['id']);
   console.log(tour);
   // 2) Create checkout session
   const session = await stripe.checkout.sessions.create({
@@ -45,7 +45,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
     )}/my-bookings?alert=booking`,
     cancel_url: `${req.protocol}://${req.get('host')}/tour/${tour.slug}`,
     customer_email: req.user.email,
-    client_reference_id: req.params.tourId,
+    client_reference_id: req.params['id'],
   });
 
   // 3) Send session as response
